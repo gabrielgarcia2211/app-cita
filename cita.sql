@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2020 a las 00:35:51
+-- Tiempo de generación: 04-11-2020 a las 23:28:15
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -30,61 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `cita` (
   `id` int(11) NOT NULL,
   `codigo` int(11) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
   `descripcion` varchar(50) DEFAULT NULL,
-  `cita` varchar(50) DEFAULT NULL,
-  `hora` date DEFAULT NULL
+  `color` varchar(255) NOT NULL,
+  `textColor` varchar(255) NOT NULL,
+  `start` datetime NOT NULL,
+  `end` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `persona`
+-- Volcado de datos para la tabla `cita`
 --
 
-CREATE TABLE `persona` (
-  `nombre` varchar(50) DEFAULT NULL,
-  `apellidos` varchar(50) DEFAULT NULL,
-  `documento` int(11) NOT NULL,
-  `correo` varchar(50) DEFAULT NULL,
-  `telefono` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `rol`
---
-
-CREATE TABLE `rol` (
-  `id` int(11) NOT NULL,
-  `descripcion` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `servicio`
---
-
-CREATE TABLE `servicio` (
-  `id` int(11) NOT NULL,
-  `descripcion` varchar(50) DEFAULT NULL,
-  `horario` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `users`
---
-
-CREATE TABLE `users` (
-  `codigo` int(11) NOT NULL,
-  `correo_institucional` varchar(50) DEFAULT NULL,
-  `documento` int(11) DEFAULT NULL,
-  `contraseña` varchar(50) DEFAULT NULL,
-  `rol` int(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `cita` (`id`, `codigo`, `title`, `descripcion`, `color`, `textColor`, `start`, `end`) VALUES
+(8, 1151654, 'POO2', 'objetos', '#ff0000', '#FFFFFF', '2020-11-04 02:29:00', '2020-11-04 02:29:00');
 
 --
 -- Índices para tablas volcadas
@@ -98,32 +57,6 @@ ALTER TABLE `cita`
   ADD KEY `codigo` (`codigo`);
 
 --
--- Indices de la tabla `persona`
---
-ALTER TABLE `persona`
-  ADD PRIMARY KEY (`documento`);
-
---
--- Indices de la tabla `rol`
---
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `servicio`
---
-ALTER TABLE `servicio`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`codigo`),
-  ADD KEY `documento` (`documento`),
-  ADD KEY `rol` (`rol`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -131,19 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `cita`
 --
 ALTER TABLE `cita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `rol`
---
-ALTER TABLE `rol`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `servicio`
---
-ALTER TABLE `servicio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
@@ -154,13 +75,6 @@ ALTER TABLE `servicio`
 --
 ALTER TABLE `cita`
   ADD CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `users` (`codigo`);
-
---
--- Filtros para la tabla `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`documento`) REFERENCES `persona` (`documento`),
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`rol`) REFERENCES `rol` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

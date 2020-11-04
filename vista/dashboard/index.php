@@ -8,397 +8,92 @@
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
 
-
-  
-
-
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
-
 
   <title>Director Agroindustrial</title>
-  <!-- Favicon -->
-  <!--<link rel="icon" href="<?php echo constant('URL') ?>public/assets/img/brand/favicon.png" type="image/png">-->
-  <link rel="shortcut icon" href="<?php echo constant('URL') ?>public/img/agro.png" />
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-  <!-- Icons -->
-  <link rel="stylesheet" href="<?php echo constant('URL') ?>public/assets/vendor/nucleo/css/nucleo.css" type="text/css">
-  <link rel="stylesheet" href="<?php echo constant('URL') ?>public/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
 
-  <!-- Page plugins -->
-  <!-- Argon CSS -->
-  <link rel="stylesheet" href="<?php echo constant('URL') ?>public/assets/css/argon.css?v=1.2.0" type="text/css">
-
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-
-  <link rel="stylesheet" href="<?php echo constant('URL') ?>public/css/director/estiloAdm.css">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link href='<?php echo constant('URL')?>public/css/calender/fullcalendar.min.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/calender/bootstrap-clockpicker.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src='<?php echo constant('URL')?>public/js/calender/moment.min.js'></script>
+    <script src='<?php echo constant('URL')?>public/js/calender/jquery.min.js'></script>
+    <script src='<?php echo constant('URL')?>public/js/calender/fullcalendar.min.js'></script>
+    <script src="<?php echo constant('URL')?>public/js/calender/bootstrap-clockpicker.js"></script>
+    <script src='<?php echo constant('URL')?>public/js/calender/es.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
 </head>
 
-<body>
-  <!-- Sidenav -->
-  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
-    <div class="scrollbar-inner">
-      <!-- Brand -->
-      <div class="sidenav-header  align-items-center">
-        <a class="navbar-brand" href="javascript:void(0)">
-          <img src="<?php echo constant('URL') ?>public/assets/img/ufps/logo-horizontal.jpg" class="navbar-brand-img" alt="...">
-        </a>
-      </div>
-      <div class="navbar-inner">
-        <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-          <!-- Nav items -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="">
-                <i class="fas fa-home"></i>
-                <span class="nav-link-text">Principal</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadCa()" class="nav-link" id="cargaEstudiantes" href="#">
-                <i class="fas fa-users"></i>
-                <span class="nav-link-text">Cargar estudiantes</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadAc()" class="nav-link" href="#">
-                <i class="fas fa-edit"></i>
-                <span class="nav-link-text">Actualizar estudiantes</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadLi()" class="nav-link" href="#">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Lista de estudiantes</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadTe()" class="nav-link" href="#">
-                <i class="fas fa-file-upload"></i>
-                <span class="nav-link-text">Subir tesis de grado</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <!-- Listado de las tesis Documentos -->
-              <a onclick="loadLte()" class="nav-link" href="#"> 
-                <i class="fas fa-file-pdf"></i>
-                <span class="nav-link-text">Ver tesis de grado</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadSe()" class="nav-link" href="#">
-                <i class="fas fa-envelope"></i>
-                <span class="nav-link-text">Envío de correos electronicos</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadPr()" class="nav-link" href="#">
-                <i class="fas fa-pen"></i>
-                <span class="nav-link-text">Pruebas de estado</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadR()" class="nav-link" href="#">
-                <i class="fas fa-file-alt"></i>
-                <span class="nav-link-text">Reportes</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadAe()" class="nav-link" href="#">
-                <i class="fas fa-building"></i>
-                <span class="nav-link-text">Agregar empresa</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadLe()" class="nav-link" href="#">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Lista de empresas</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadEn()" class="nav-link" href="#">
-                <i class="fas fa-poll"></i>
-                <span class="nav-link-text">Encuestas</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadEv()" class="nav-link" href="#">
-                <i class="fas fa-calendar-week"></i>
-                <span class="nav-link-text">Eventos</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadLev()" class="nav-link" href="#">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Listado de eventos</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadNo()" class="nav-link" href="#">
-                <i class="fas fa-tv"></i>
-                <span class="nav-link-text">Publicar noticia</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a onclick="loadLno()" class="nav-link" href="#">
-                <i class="fas fa-newspaper"></i>
-                <span class="nav-link-text">Noticias publicadas</span>
-              </a>
-            </li>
-          </ul>
-          <!-- Divider -->
-          <hr class="my-3">
-          <!-- Heading -->
-          <h6 class="navbar-heading p-0 text-muted">
-            <span class="docs-normal">Paginas institucionales</span>
-          </h6>
-          <!-- Navigation -->
-          <ul class="navbar-nav mb-md-3">
-            <li class="nav-item">
-              <a class="nav-link" href="https://ww2.ufps.edu.co/" target="_blank">
-                <i class="fas fa-university"></i>
-                <span class="nav-link-text">UFPS</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://divisist2.ufps.edu.co/" target="_blank">
-                <i class="ni ni-palette"></i>
-                <span class="nav-link-text">Divisist 2.0</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://uvirtual.cloud.ufps.edu.co/" target="_blank">
-                <i class="ni ni-ui-04"></i>
-                <span class="nav-link-text">U virtual UFPS</span>
-              </a>
-            </li>
-          </ul>
+    <body>
+    <div class="container" style="margin-top: 5%">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8">
+                <div id="CalendarioWeb"></div>
+            </div>
+            <div class="col"></div>
         </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main content :v  -->
-  <div class="main-content" id="panel">
-    <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Search form -->
-          <!-- Navbar links -->
-          <ul class="navbar-nav align-items-center    ml-md-auto ">
-
-            <li class="nav-item d-xl-none">
-              <!-- Sidenav toggler -->
-              <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                </div>
-              </div>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="media align-items-center">
-                  <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="<?php echo constant('URL') ?>public/assets/img/ufps/logo_agroindustrial.png">
-                  </span>
-                  <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Administrador Agroindustrial</span>
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <ul class="navbar-nav align-items-center ml-auto ml-md-0 ">
-
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="<?php echo constant('URL') ?>loginControl/cerrarSesionAdministrativo" role="button">
-                <i class="ni ni-button-power"></i>
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-    <!-- Header -->
-    <!-- Header -->
-    <div class="header bg-primary pb-6">
-      <div class="container-fluid">
-        <div class="header-body">
-          <div class="row align-items-center py-4">
-            <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Sistema de Control Egresados</h6>
-              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-              </nav>
-            </div>
-            <div class="col-lg-6 col-5 text-right">
-              <!-- <a href="#" class="btn btn-sm btn-neutral">New</a>
-              <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
-            </div>
-          </div>
-          <!-- Card stats -->
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">N° de estudiantes</h5>
-                      <span class="h2 font-weight-bold mb-0"></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="fas fa-user-friends"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!---->
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">N° de graduados</h5>
-                      <span class="h2 font-weight-bold mb-0"></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="fas fa-user-graduate"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">N° de empresas</h5>
-                      <span class="h2 font-weight-bold mb-0"></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                        <i class="fas fa-building"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Tesis subidas</h5>
-                      <span class="h2 font-weight-bold mb-0"></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                        <i class="fas fa-file-pdf"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Fecha</h5>
-                      <span class="h2 font-weight-bold mb-0"><?= date('d/m/y'); ?></span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="fas fa-table"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Page content -->
-
-    <div class="container-fluid mt--6" id="contenedor">
-
-  
-
     </div>
 
+    <!-- Modal (editar, eliminar)-->
+    <div class="modal fade" id="modalEventos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloEvento"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="descripcionEvento">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="fecha">Fecha</label>
+                                            <input class="form-control" type="text" name="fecha" id="fecha" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="titulo">Titulo</label>
+                                            <input class="form-control" type="text" name="titulo" id="titulo">
+                                        </div>
+                                        <div class="input-group clockpicker" data-autoclose="true">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="hora">
+                                        </div>
+                                        <div class="form-group" style="margin-top: 2%">
+                                            <label for="descripcion">Descripcion</label>
+                                            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group" style="width: 30%">
+                                            <label for="color">Color</label>
+                                            <input class="form-control" type="color" name="color" id="color">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="guardarCita()" type="button" class="btn btn-primary" id="agregar">Agregar</button>
+                    <button onclick="editarCita()" type="button" class="btn btn-success" data-dismiss="modal" id="editar">Editar</button>
+                    <button onclick="deleteCita()" type="button" class="btn btn-danger" id="eliminar">Eliminar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-  </div>
-
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="<?php echo constant('URL') ?>public/js/director/main.js"></script>
-
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="<?php echo constant('URL') ?>public/assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="<?php echo constant('URL') ?>public/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo constant('URL') ?>public/assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="<?php echo constant('URL') ?>public/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="<?php echo constant('URL') ?>public/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- Optional JS -->
-  <script src="<?php echo constant('URL') ?>public/assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="<?php echo constant('URL') ?>public/assets/vendor/chart.js/dist/Chart.extension.js"></script>
-
-
-  <!-- Argon JS -->
-  <script src="<?php echo constant('URL') ?>public/assets/js/argon.js?v=1.2.0"></script>
-  
-
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src='<?php echo constant('URL')?>public/js/dashboard/script.js'></script>
 
 </body>
 

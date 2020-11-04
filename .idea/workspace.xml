@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83ff7eb4-c12c-4e2b-9630-971eaa684b8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/modelo/dao/adminDao.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/calender/bootstrap-clockpicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/calender/bootstrap-clockpicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/calender/fullcalendar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/calender/bootstrap-clockpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/calender/fullcalendar.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controlador/adminControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/controlador/adminControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelo/dao/personaDao.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/dashboard/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vista/dashboard/index.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jkR7djNBnBWEZ2jV0FnyNzhbgD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css/calender" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cita\public\css\calender" />
+      <recent name="C:\xampp\htdocs\cita\public\js\calender" />
+      <recent name="C:\xampp\htdocs\cita\public\js\dashboard" />
+      <recent name="C:\xampp\htdocs\cita\public\js" />
+      <recent name="C:\xampp\htdocs\cita\public\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cita\public\css\calender" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83ff7eb4-c12c-4e2b-9630-971eaa684b8b" name="Default Changelist" comment="" />
+      <created>1604345937479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604345937479</updated>
+      <workItem from="1604345938584" duration="14250000" />
+      <workItem from="1604434114232" duration="11274000" />
+      <workItem from="1604518671814" duration="9325000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="336" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604440002623">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="336" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1604440002623" />
+  </component>
+</project>

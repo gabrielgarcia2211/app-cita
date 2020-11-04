@@ -48,10 +48,14 @@ class App{
             if($url[0]=="logi"){
              $url[0]="login";
             }
+           if($url[0]=="admi"){
+               $url[0]="admin";
+           }
 
 
            $controller->loadModel($url[0]);
            //numero de elementos del arreglo
+
            $nparam = sizeof($url);
            if($nparam>1){
                $def = method_exists($controller,$url[1]);
@@ -71,9 +75,9 @@ class App{
            }
        }else{
            $controller = new errorControl("error"); 
-       }  
+       }
       
-   }  
+   }
      
 }
 
