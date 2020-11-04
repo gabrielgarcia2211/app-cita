@@ -1,7 +1,5 @@
 const URLD = "http://localhost/cita/";
 var ID;
-var nuevaCita;
-
 
 this.calender();
 
@@ -12,7 +10,7 @@ function calender(){
       header: {
          left: 'prev,next today',
          center: 'title',
-         right: 'month,agendaDay,listWeek'
+         right: 'month,agendaWeek,agendaDay,listWeek'
       },
       events:URLD + "adminControl/getCita/",
       eventClick:function(calEvent,jsEvent,view){
@@ -43,6 +41,24 @@ function calender(){
          $("#editar").css("display", "none");
          $("#eliminar").css("display", "none");
 
+      },
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      eventDrop:function (calEvent){
+         ID = calEvent.id;
+         FechaHora = calEvent.start.format().split("T");
+         var inicio = FechaHora[0] + " " +  FechaHora[1];
+         httpRequest(URLD + "adminControl/editCita/" + ID +"/" + calEvent.title + "/" + inicio + "/" + calEvent.descripcion + "/" + calEvent.color.slice(1) + "/" + calEvent.textColor.slice(1), function () {
+            Swal.fire({
+               position: 'top-end',
+               title: 'Exito!',
+               text: 'Cita reprogramada',
+               icon: 'success',
+               showConfirmButton: false,
+               timer: 900
+            })
+         });
       }
    });
 }
@@ -56,10 +72,23 @@ function guardarCita(){
    var color = $("#color").val();
    var textColor = "#FFFFFF";
 
+   if(titulo=="" || fechaInicio=="" || hora=="" || descripcion==""){
+      $('#contError').text("Por favor, Introduce todos los valores");
+      $('.alert').show();
+      return;
+   }
+   $('#alert').hide();
+
    //concatenar inicio de cita
    var inicio = fechaInicio + " " +  hora;
 
-   GUI();
+   var nuevaCita = {
+      title:titulo,
+      start:inicio,
+      descripcion:descripcion,
+      color:color,
+      textColor:textColor
+   }
 
    $('#CalendarioWeb').fullCalendar('renderEvent', nuevaCita );
    $("#modalEventos").modal('toggle');
@@ -84,6 +113,14 @@ function editarCita(){
    var descripcion = $("#descripcion").val();
    var color = $("#color").val();
    var textColor = "#FFFFFF";
+
+   if(titulo=="" || fechaInicio=="" || hora=="" || descripcion==""){
+      $('#contError').text("Por favor, Introduce todos los valores");
+      $('.alert').show();
+      return;
+   }
+   $('#alert').hide();
+
 
    //concatenar inicio de cita
    var inicio = fechaInicio + " " +  hora;
@@ -118,15 +155,6 @@ function deleteCita(){
    });
 }
 
-function GUI(){
-   nuevaCita = {
-      title:titulo,
-      start:inicio,
-      descripcion:descripcion,
-      color:color,
-      textColor:textColor
-   }
-}
 
 function httpRequest(url, callback){
    const http = new XMLHttpRequest();
