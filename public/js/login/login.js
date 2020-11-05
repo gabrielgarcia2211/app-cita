@@ -14,10 +14,15 @@ const URLD = "http://localhost/cita/";
       $('.alert').show();
       return;
     }
+    $('.alert').hide();
     httpRequest(URLD + "loginControl/validarDatos/" + codigo + "/" + documento + "/" + contraseña, function () {
       var resp = this.responseText;
-      window.location.href = URLD + "adminControl/render/";
-    
+      if(resp==1){
+        window.location.href = URLD + "adminControl/render/";
+      }else{
+        $('.respuesta').text("Datos incorrectos!");
+        $('.alert').show();
+      }
     });
    
   

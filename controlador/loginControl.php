@@ -18,10 +18,16 @@
           $this->view->render($constr, 'index');}
         }
 
-        function validarDatos($data){
-          echo $data[0];
-          return;
+        function validarDatos($param){
+            if($param==null)return;
+            $codigo = $param[0];
+            $documento = $param[1];
+            $contrasena = $param[2];
+            $resp = $this->model->verificarUser($codigo, $documento, $contrasena);
+            echo $resp;
         }
+
+
 
       }
 ?>
