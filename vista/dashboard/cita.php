@@ -62,7 +62,15 @@
                                             <label for="titulo">Titulo</label>
                                             <input class="form-control" type="text" name="titulo" id="titulo">
                                         </div>
-                                        <div class="input-group clockpicker" data-autoclose="true">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Servicio</label>
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                <?php for ($m = 0; $m < count($this->servicio); $m++) : ?>
+                                                <option class="dropdown-item" href="#" value="<?php echo $this->servicio[$m]['id'];?>"><?php echo $this->servicio[$m]['descripcion'];?></option>
+                                                <?php endfor; ?></a>
+                                            </select>
+                                        </div>
+                                        <div class="input-group clockpicker" data-autoclose="true"  style="margin-top: 2%">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                             </div>
@@ -70,11 +78,11 @@
                                         </div>
                                         <div class="form-group" style="margin-top: 2%">
                                             <label for="descripcion">Descripcion</label>
-                                            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                                            <textarea class="form-control" id="descripcion" rows="2"></textarea>
                                         </div>
                                         <div class="form-group" style="width: 30%">
                                             <label for="color">Color</label>
-                                            <input class="form-control" type="color"  name="color" id="color"  value="#ff0000">
+                                            <input class="form-control" type="text"  name="color" id="color"  value="#8080ff" disabled>
                                         </div>
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none">
                                             <strong id="contError"></strong>

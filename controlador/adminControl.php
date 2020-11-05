@@ -7,11 +7,13 @@
 
       function __construct(){
          parent::__construct();
+         $this->view->servicio = [];
         
       }
 
       function render($ubicacion = null){
          $constr = "dashboard";
+         $this->view->servicio = $this->getServicio();
            if(isset($ubicacion[0])){
                 $this->view->render($constr , $ubicacion[0]);
           }else{
@@ -27,28 +29,30 @@
       function addCita($param = null){
           if($param==null)return;
 
-          $codigo = '1151654';
+          $codigo = $_SESSION['codigo'];
           $title  = $param[0];
           $start = $param[1];
           $end = $param[1];
           $descripcion = $param[2];
           $color  = "#".$param[3];
           $text  = "#".$param[4];
-          $resp = $this->model->addCita($codigo,$title,$descripcion,$color,$text,$start,$end);
+          $servicio  = $param[5];
+          $resp = $this->model->addCita($codigo,$title,$descripcion,$color,$text,$start,$end,$servicio);
           echo $resp;
       }
 
       function editCita($param = null){
           if($param==null)return;
           $id = $param[0];
-          $codigo = '1151654';
+          $codigo = $_SESSION['codigo'];
           $title  = $param[1];
           $start = $param[2];
           $end = $param[2];
           $descripcion = $param[3];
           $color  = "#".$param[4];
           $text  = "#".$param[5];
-          $resp = $this->model->editCita($id, $codigo,$title,$descripcion,$color,$text,$start,$end);
+          $servicio  = $param[6];
+          $resp = $this->model->editCita($id, $codigo,$title,$descripcion,$color,$text,$start,$end,$servicio);
           echo $resp;
       }
 
@@ -57,6 +61,10 @@
           $id = $param[0];
           $resp = $this->model->deleteCita($id);
           echo $resp;
+      }
+
+      function getServicio(){
+          return $this->model->getServicio();
       }
 
 

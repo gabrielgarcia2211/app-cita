@@ -21,6 +21,7 @@
         function validarDatos($param){
             if($param==null)return;
             $codigo = $param[0];
+            $_SESSION["codigo"] = $codigo;
             $documento = $param[1];
             $contrasena = $param[2];
             $resp = $this->model->verificarUser($codigo, $documento, $contrasena);

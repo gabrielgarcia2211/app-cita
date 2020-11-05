@@ -3,6 +3,7 @@ var ID;
 
 this.calender();
 
+
 $('.clockpicker').clockpicker();
 
 function calender(){
@@ -34,7 +35,7 @@ function calender(){
          $("#titulo").val("");
          $("#hora").val("");
          $("#descripcion").val("");
-         $("#color").val("");
+         $("#color").val("#8080ff");
          $("#fecha").val(date.format());
          $("#modalEventos").modal();
          $("#agregar").css("display", "block");
@@ -48,8 +49,9 @@ function calender(){
       eventDrop:function (calEvent){
          ID = calEvent.id;
          FechaHora = calEvent.start.format().split("T");
+         var servicio = $("#exampleFormControlSelect1").val();
          var inicio = FechaHora[0] + " " +  FechaHora[1];
-         httpRequest(URLD + "adminControl/editCita/" + ID +"/" + calEvent.title + "/" + inicio + "/" + calEvent.descripcion + "/" + calEvent.color.slice(1) + "/" + calEvent.textColor.slice(1), function () {
+         httpRequest(URLD + "adminControl/editCita/" + ID +"/" + calEvent.title + "/" + inicio + "/" + calEvent.descripcion + "/" + calEvent.color.slice(1) + "/" + calEvent.textColor.slice(1) + "/" +servicio, function () {
             Swal.fire({
                position: 'top-end',
                title: 'Exito!',
@@ -58,6 +60,7 @@ function calender(){
                showConfirmButton: false,
                timer: 900
             })
+            location.reload();
          });
       }
    });
@@ -69,8 +72,10 @@ function guardarCita(){
    var fechaInicio = $("#fecha").val();
    var hora = $("#hora").val() + ":00";
    var descripcion = $("#descripcion").val();
-   var color = $("#color").val();
+   var color = "#8080ff";
    var textColor = "#FFFFFF";
+   var servicio = $("#exampleFormControlSelect1").val();
+
 
    if(titulo=="" || fechaInicio=="" || hora=="" || descripcion==""){
       $('#contError').text("Por favor, Introduce todos los valores");
@@ -93,7 +98,7 @@ function guardarCita(){
    $('#CalendarioWeb').fullCalendar('renderEvent', nuevaCita );
    $("#modalEventos").modal('toggle');
 
-   httpRequest(URLD + "adminControl/addCita/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1), function () {
+   httpRequest(URLD + "adminControl/addCita/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1) + "/" + servicio, function () {
       var resp = this.responseText;
       Swal.fire({
          title: 'Exito!',
@@ -113,6 +118,7 @@ function editarCita(){
    var descripcion = $("#descripcion").val();
    var color = $("#color").val();
    var textColor = "#FFFFFF";
+   var servicio = $("#exampleFormControlSelect1").val();
 
    if(titulo=="" || fechaInicio=="" || hora=="" || descripcion==""){
       $('#contError').text("Por favor, Introduce todos los valores");
@@ -125,7 +131,7 @@ function editarCita(){
    //concatenar inicio de cita
    var inicio = fechaInicio + " " +  hora;
 
-   httpRequest(URLD + "adminControl/editCita/" + ID +"/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1), function () {
+   httpRequest(URLD + "adminControl/editCita/" + ID +"/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1) +"/" +servicio, function () {
       $('#CalendarioWeb').fullCalendar('refetchEvents');
       $("#modalEventos").modal('toggle');
       var resp = this.responseText;
@@ -135,6 +141,7 @@ function editarCita(){
          icon: 'success',
          confirmButtonText: 'OK'
       })
+      location.reload();
 
 
    });
@@ -154,7 +161,6 @@ function deleteCita(){
 
    });
 }
-
 
 function httpRequest(url, callback){
    const http = new XMLHttpRequest();
