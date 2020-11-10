@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83ff7eb4-c12c-4e2b-9630-971eaa684b8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controlador/estudianteControl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelo/dao/estudianteDao.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/pdf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cita.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cita.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controlador/adminControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/controlador/adminControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controlador/loginControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/controlador/loginControl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modelo/dao/adminDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/dao/adminDao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/dashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vista/dashboard/cita.php" beforeDir="false" afterPath="$PROJECT_DIR$/vista/dashboard/cita.php" afterDir="false" />
@@ -48,18 +49,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\cita\public\css\calender" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\cita\util" />
       <recent name="C:\xampp\htdocs\cita" />
       <recent name="C:\xampp\htdocs\cita\public\css\calender" />
       <recent name="C:\xampp\htdocs\cita\public\js\calender" />
       <recent name="C:\xampp\htdocs\cita\public\js\dashboard" />
-      <recent name="C:\xampp\htdocs\cita\public\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cita\public\css\calender" />
     </key>
   </component>
   <component name="RunManager">
@@ -87,7 +89,11 @@
       <workItem from="1604538014211" duration="22000" />
       <workItem from="1604593272202" duration="536000" />
       <workItem from="1604605461805" duration="25000" />
-      <workItem from="1604606452679" duration="5374000" />
+      <workItem from="1604606452679" duration="10958000" />
+      <workItem from="1604778473105" duration="120000" />
+      <workItem from="1604866025651" duration="10746000" />
+      <workItem from="1604955847516" duration="4832000" />
+      <workItem from="1604969810849" duration="6507000" />
     </task>
     <servers />
   </component>
@@ -107,17 +113,20 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604440002623">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604957202785">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="336" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1604440002623" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1604605495868">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604957202785" />
+    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1604778593948">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604605495868" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1604610110892">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604778593948" />
+    <state x="476" y="231" width="672" height="677" key="run.anything.popup" timestamp="1604867005588">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1604610110892" />
+    <state x="476" y="231" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604867005588" />
   </component>
 </project>

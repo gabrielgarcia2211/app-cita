@@ -1,5 +1,7 @@
 const URLD = "http://localhost/cita/";
 var ID;
+var FechaDisponible;
+var tomarHora = "";
 
 this.calender();
 
@@ -13,7 +15,7 @@ function calender(){
          center: 'title',
          right: 'month,agendaWeek,agendaDay,listWeek'
       },
-      events:URLD + "adminControl/getCita/",
+      events:URLD + "estudianteControl/getCita/",
       eventClick:function(calEvent,jsEvent,view){
          ID = calEvent.id;
          $("#tituloEvento").html(calEvent.title);
@@ -21,12 +23,14 @@ function calender(){
          $("#titulo").val(calEvent.title);
          FechaHora = calEvent.start._i.split(" ");
          $("#fecha").val(FechaHora[0]);
+         FechaDisponible = $("#fecha").val();
          $("#hora").val(FechaHora[1]);
          $("#descripcion").val(calEvent.descripcion);
          $("#color").val(calEvent.color);
          $("#agregar").css("display", "none");
          $("#editar").css("display", "block");
          $("#eliminar").css("display", "block");
+         normal();
          $("#modalEventos").modal();
 
       },
@@ -37,21 +41,23 @@ function calender(){
          $("#descripcion").val("");
          $("#color").val("#8080ff");
          $("#fecha").val(date.format());
+         FechaDisponible = $("#fecha").val();
          $("#modalEventos").modal();
          $("#agregar").css("display", "block");
          $("#editar").css("display", "none");
          $("#eliminar").css("display", "none");
+         normal();
 
       },
-      navLinks: true, // can click day/week names to navigate views
+      navLinks: true,
       editable: true,
-      eventLimit: true, // allow "more" link when too many events
+      eventLimit: true,
       eventDrop:function (calEvent){
          ID = calEvent.id;
          FechaHora = calEvent.start.format().split("T");
          var servicio = $("#exampleFormControlSelect1").val();
          var inicio = FechaHora[0] + " " +  FechaHora[1];
-         httpRequest(URLD + "adminControl/editCita/" + ID +"/" + calEvent.title + "/" + inicio + "/" + calEvent.descripcion + "/" + calEvent.color.slice(1) + "/" + calEvent.textColor.slice(1) + "/" +servicio, function () {
+         httpRequest(URLD + "estudianteControl/editCita/" + ID +"/" + calEvent.title + "/" + inicio + "/" + calEvent.descripcion + "/" + calEvent.color.slice(1) + "/" + calEvent.textColor.slice(1) + "/" +servicio, function () {
             Swal.fire({
                position: 'top-end',
                title: 'Exito!',
@@ -68,9 +74,10 @@ function calender(){
 
 function guardarCita(){
 
+
    var titulo = $("#titulo").val();
    var fechaInicio = $("#fecha").val();
-   var hora = $("#hora").val() + ":00";
+   var hora = tomarHora;
    var descripcion = $("#descripcion").val();
    var color = "#8080ff";
    var textColor = "#FFFFFF";
@@ -86,35 +93,35 @@ function guardarCita(){
 
    //concatenar inicio de cita
    var inicio = fechaInicio + " " +  hora;
+      var nuevaCita = {
+         title:titulo,
+         start:inicio,
+         descripcion:descripcion,
+         color:color,
+         textColor:textColor
+      }
 
-   var nuevaCita = {
-      title:titulo,
-      start:inicio,
-      descripcion:descripcion,
-      color:color,
-      textColor:textColor
-   }
+      $('#CalendarioWeb').fullCalendar('renderEvent', nuevaCita );
+      $("#modalEventos").modal('toggle');
 
-   $('#CalendarioWeb').fullCalendar('renderEvent', nuevaCita );
-   $("#modalEventos").modal('toggle');
-
-   httpRequest(URLD + "adminControl/addCita/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1) + "/" + servicio, function () {
-      var resp = this.responseText;
-      Swal.fire({
-         title: 'Exito!',
-         text: 'Cita agendada',
-         icon: 'success',
-         confirmButtonText: 'OK'
-      })
+         httpRequest(URLD + "estudianteControl/addCita/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1) + "/" + servicio, function () {
+            var resp = this.responseText;
+            Swal.fire({
+               title: 'Exito!',
+               text: 'Cita agendada',
+               icon: 'success',
+               confirmButtonText: 'OK'
+            })
+            alert(resp);
 
 
-   });
+         });
 }
 
 function editarCita(){
    var titulo = $("#titulo").val();
    var fechaInicio = $("#fecha").val();
-   var hora = $("#hora").val() + ":00";
+   var hora = tomarHora;
    var descripcion = $("#descripcion").val();
    var color = $("#color").val();
    var textColor = "#FFFFFF";
@@ -131,7 +138,7 @@ function editarCita(){
    //concatenar inicio de cita
    var inicio = fechaInicio + " " +  hora;
 
-   httpRequest(URLD + "adminControl/editCita/" + ID +"/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1) +"/" +servicio, function () {
+   httpRequest(URLD + "estudianteControl/editCita/" + ID +"/" + titulo + "/" + inicio + "/" + descripcion + "/" + color.slice(1) + "/" + textColor.slice(1) +"/" +servicio, function () {
       $('#CalendarioWeb').fullCalendar('refetchEvents');
       $("#modalEventos").modal('toggle');
       var resp = this.responseText;
@@ -148,7 +155,7 @@ function editarCita(){
 }
 
 function deleteCita(){
-   httpRequest(URLD + "adminControl/deleteCita/" + ID , function () {
+   httpRequest(URLD + "estudianteControl/deleteCita/" + ID , function () {
       $('#CalendarioWeb').fullCalendar('refetchEvents');
       $("#modalEventos").modal('toggle');
       Swal.fire({
@@ -160,6 +167,42 @@ function deleteCita(){
 
 
    });
+}
+
+function getHorario(){
+   httpRequest(URLD + "estudianteControl/getHorario/" + FechaDisponible , function () {
+      let tasks = JSON.parse(this.responseText);
+      let template = '';
+
+      for (var i = 0;i<4 ;i++){
+         if(tasks[i]!=0){
+            par = tasks[i].substr(0,2);
+            template +=`<tr style="padding: 4px;margin-right: 10px">
+             <td id="${par}" onclick="return llenarHora(this.id)" type="button" class="btn btn-info" >${tasks[i]}</td>
+             </tr>`
+         }
+      }
+      $('.contenedor').html(template);
+
+   });
+
+
+}
+
+function normal(){
+   let template = '';
+   template += `<div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-clock"></i></span>
+   </div>
+   <button onclick="getHorario()" type="button" class="btn btn-primary form-control" id="hora">Horario Disponibles</button>`
+   $('.contenedor').html(template);
+}
+
+function llenarHora(id){
+
+
+   $("#" + id).hide();
+   tomarHora = id + ":00" + ":00";
 }
 
 function httpRequest(url, callback){

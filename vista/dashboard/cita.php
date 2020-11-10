@@ -70,11 +70,12 @@
                                                 <?php endfor; ?></a>
                                             </select>
                                         </div>
-                                        <div class="input-group clockpicker" data-autoclose="true"  style="margin-top: 2%">
+
+                                        <div class="input-group clockpicker contenedor" data-autoclose="true"  style="margin-top: 2%">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" id="hora">
+                                            <button onclick="getHorario()" type="button" class="btn btn-primary form-control" id="hora">Horario Disponibles</button>
                                         </div>
                                         <div class="form-group" style="margin-top: 2%">
                                             <label for="descripcion">Descripcion</label>
