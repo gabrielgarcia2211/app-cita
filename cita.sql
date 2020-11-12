@@ -1,34 +1,14 @@
--- phpMyAdmin SQL Dump
--- version 5.0.3
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2020 a las 21:21:12
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.11
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
---
--- Base de datos: `cita`
---
+CREATE DATABASE IF NOT EXISTS `cita` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `cita`;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cita`
---
-
-CREATE TABLE `cita` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `cita` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `codigo` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `descripcion` varchar(50) DEFAULT NULL,
@@ -36,147 +16,80 @@ CREATE TABLE `cita` (
   `textColor` varchar(255) NOT NULL,
   `start` datetime NOT NULL,
   `end` datetime NOT NULL,
-  `id_servicio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_servicio` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `codigo` (`codigo`),
+  KEY `id_servicio` (`id_servicio`),
+  CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `users` (`codigo`),
+  CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`id_servicio`) REFERENCES `servicio` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+/*!40000 ALTER TABLE `cita` DISABLE KEYS */;
+INSERT INTO `cita` (`id`, `codigo`, `title`, `descripcion`, `color`, `textColor`, `start`, `end`, `id_servicio`) VALUES
+	(1, 1151654, 'duda programada', 'no entiendo un concepto', '#FF5E4B', '#FFFFFF', '2020-11-07 10:00:00', '2020-11-07 10:00:00', 1),
+	(6, 1151654, 'hola new', 'hola', '#FF5E4B', '#FFFFFF', '2020-11-13 12:00:00', '2020-11-13 12:00:00', 1),
+	(7, 1151654, 'aaa', 'aa', '#FF5E4B', '#FFFFFF', '2020-11-12 10:00:00', '2020-11-12 10:00:00', 1),
+	(9, 1151654, 'nada que ver', 'aaa', '#FF5E4B', '#FFFFFF', '2020-11-03 14:00:00', '2020-11-03 14:00:00', 1),
+	(10, 1151654, 'dragon ball', 'aa', '#8080ff', '#FFFFFF', '2020-11-13 08:00:00', '2020-11-13 08:00:00', 2);
+/*!40000 ALTER TABLE `cita` ENABLE KEYS */;
 
---
--- Estructura de tabla para la tabla `personas`
---
-
-CREATE TABLE `personas` (
+CREATE TABLE IF NOT EXISTS `personas` (
   `nombre` varchar(255) DEFAULT NULL,
   `apellido` varchar(255) DEFAULT NULL,
   `documento` int(11) NOT NULL,
   `correo` varchar(255) DEFAULT NULL,
-  `telefono` varchar(255) DEFAULT NULL
+  `telefono` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`documento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `personas`
---
-
+/*!40000 ALTER TABLE `personas` DISABLE KEYS */;
 INSERT INTO `personas` (`nombre`, `apellido`, `documento`, `correo`, `telefono`) VALUES
-('Gabriel', 'Garcia', 1004804515, 'garcia@gmail.com', '455443');
+	('Gabriel', 'Garcia', 1004804515, 'garcia@gmail.com', '455443');
+/*!40000 ALTER TABLE `personas` ENABLE KEYS */;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `rol`
---
-
-CREATE TABLE `rol` (
+CREATE TABLE IF NOT EXISTS `rol` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(255) DEFAULT NULL
+  `descripcion` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `rol`
---
-
+/*!40000 ALTER TABLE `rol` DISABLE KEYS */;
 INSERT INTO `rol` (`id`, `descripcion`) VALUES
-(1, 'administrador'),
-(2, 'ingeniero'),
-(3, 'estudiante');
+	(1, 'administrador'),
+	(2, 'ingeniero'),
+	(3, 'estudiante');
+/*!40000 ALTER TABLE `rol` ENABLE KEYS */;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `servicio`
---
-
-CREATE TABLE `servicio` (
+CREATE TABLE IF NOT EXISTS `servicio` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(255) DEFAULT NULL
+  `descripcion` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `servicio`
---
-
+/*!40000 ALTER TABLE `servicio` DISABLE KEYS */;
 INSERT INTO `servicio` (`id`, `descripcion`) VALUES
-(1, 'Programacion web'),
-(2, 'Estructuras de datos');
+	(1, 'Programacion web'),
+	(2, 'Estructuras de datos');
+/*!40000 ALTER TABLE `servicio` ENABLE KEYS */;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `users`
---
-
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `codigo` int(11) NOT NULL,
   `correo_institucional` varchar(255) DEFAULT NULL,
   `documento` int(11) NOT NULL,
   `contraseña` varchar(50) DEFAULT NULL,
-  `rol` int(1) DEFAULT NULL
+  `rol` int(1) DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `documento` (`documento`),
+  KEY `rol` (`rol`),
+  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`documento`) REFERENCES `personas` (`documento`),
+  CONSTRAINT `users_ibfk_2` FOREIGN KEY (`rol`) REFERENCES `rol` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `users`
---
-
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`codigo`, `correo_institucional`, `documento`, `contraseña`, `rol`) VALUES
-(1151654, 'gabrielarturogq@ufps.edu.co', 1004804515, '12345', 3);
+	(1151654, 'gabrielarturogq@ufps.edu.co', 1004804515, '12345', 3);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `cita`
---
-ALTER TABLE `cita`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `codigo` (`codigo`),
-  ADD KEY `id_servicio` (`id_servicio`);
-
---
--- Indices de la tabla `personas`
---
-ALTER TABLE `personas`
-  ADD PRIMARY KEY (`documento`);
-
---
--- Indices de la tabla `rol`
---
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `servicio`
---
-ALTER TABLE `servicio`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`codigo`),
-  ADD KEY `documento` (`documento`),
-  ADD KEY `rol` (`rol`);
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `cita`
---
-ALTER TABLE `cita`
-  ADD CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `users` (`codigo`),
-  ADD CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`id_servicio`) REFERENCES `servicio` (`id`);
-
---
--- Filtros para la tabla `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`documento`) REFERENCES `personas` (`documento`),
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`rol`) REFERENCES `rol` (`id`);
-COMMIT;
-
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
