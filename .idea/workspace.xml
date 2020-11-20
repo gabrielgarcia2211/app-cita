@@ -20,13 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83ff7eb4-c12c-4e2b-9630-971eaa684b8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/dashboard/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Logo-nuevo-horizontal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelo/dto/citaDto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controlador/adminControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/controlador/adminControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vista/dashboard/cita.php" beforeDir="false" afterPath="$PROJECT_DIR$/vista/dashboard/cita.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vista/dashboard/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vista/dashboard/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelo/dao/estudianteDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/modelo/dao/estudianteDao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/dashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/login/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +46,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../proyecto_egresados" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\cita\public\css\calender" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\laragon\www\cita\public\img" />
       <recent name="D:\laragon\www\cita\util" />
       <recent name="C:\xampp\htdocs\cita" />
       <recent name="C:\xampp\htdocs\cita\public\css\calender" />
       <recent name="C:\xampp\htdocs\cita\public\js\calender" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cita\public\css\calender" />
     </key>
   </component>
   <component name="RunManager">
@@ -94,6 +93,13 @@
       <workItem from="1604955847516" duration="4832000" />
       <workItem from="1604969810849" duration="6591000" />
       <workItem from="1605186992550" duration="3727000" />
+      <workItem from="1605210081723" duration="14000" />
+      <workItem from="1605385109028" duration="2159000" />
+      <workItem from="1605390339915" duration="1041000" />
+      <workItem from="1605648873619" duration="2392000" />
+      <workItem from="1605653860919" duration="5000" />
+      <workItem from="1605729388821" duration="8097000" />
+      <workItem from="1605798241925" duration="27000" />
     </task>
     <servers />
   </component>
@@ -113,16 +119,28 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="735" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605385313415">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="735" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605385313415" />
+    <state x="1233" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1605386131120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1233" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605386131120" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604957202785">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="336" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1604440002623" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604957202785" />
-    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1604778593948">
+    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1605798266821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604605495868" />
-    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604778593948" />
+    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605798266821" />
+    <state x="781" y="243" key="NewPhpClassDialog" timestamp="1605385334886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="781" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605385334886" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1605187133223">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

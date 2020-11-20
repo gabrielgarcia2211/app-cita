@@ -1,5 +1,5 @@
 
-const URLD = "http://localhost/cita/";
+const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
 
 
   //METODO PARA LA VERIFICACION DE DATOS 
@@ -18,7 +18,7 @@ const URLD = "http://localhost/cita/";
     httpRequest(URLD + "loginControl/validarDatos/" + codigo + "/" + documento + "/" + contraseña, function () {
       var resp = this.responseText;
       if(resp==1){
-        window.location.href = URLD + "adminControl/render/";
+        window.location.href = URLD + "estudianteControl/render/";
       }else{
         $('.respuesta').text("Datos incorrectos!");
         $('.alert').show();

@@ -1,4 +1,4 @@
-const URLD = "http://localhost/cita/";
+const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
 var ID;
 var FechaDisponible;
 var tomarHora = "";

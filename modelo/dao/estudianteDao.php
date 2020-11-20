@@ -1,6 +1,6 @@
 <?php
 
-
+require 'modelo/dto/citaDto.php';
 class estudianteDao extends Model{
     
     public function __construct(){
@@ -20,17 +20,18 @@ class estudianteDao extends Model{
     }
 
     public function addCita($codigo, $title, $descripcion, $color, $text, $start, $end, $servicio){
+        $cita = new citaDto(0,$codigo, $title, $descripcion, $color, $text, $start, $end, $servicio);
         $query = $this->db->connect()->prepare("INSERT INTO cita(codigo, title, descripcion, color, textColor, start, end , id_servicio) VALUES (:codigo,:title,:descripcion,:color,:textColor, :start, :end ,:servicio)");
         try {
             $query->execute([
-                ':codigo' =>  $codigo ,
-                ':title' => $title,
-                ':descripcion' => $descripcion ,
-                ':color' => $color ,
-                ':textColor' => $text,
-                ':start' => $start,
-                ':end' => $end,
-                ':servicio' => $servicio
+                ':codigo' =>  $cita->getCodigo() ,
+                ':title' => $cita->getTitle(),
+                ':descripcion' => $cita->getDescripcion() ,
+                ':color' => $cita->getColor() ,
+                ':textColor' => $cita->getTextColor(),
+                ':start' => $cita->getStart(),
+                ':end' => $cita->getEnd(),
+                ':servicio' => $cita->getIdServicio()
             ]);
             $resultado = $query->fetchAll();
             return true;
@@ -40,18 +41,19 @@ class estudianteDao extends Model{
     }
 
     public function editCita($id,$codigo, $title, $descripcion, $color, $text, $start, $end,$servicio){
+        $cita = new citaDto($id,$codigo, $title, $descripcion, $color, $text, $start, $end, $servicio);
         try{
             $query = $this->db->connect()->prepare('UPDATE cita SET codigo = :codigo, title=:title , descripcion= :descripcion , color= :color , start= :start , textColor= :textColor, end= :end , id_servicio= :servicio WHERE id=:id');
             $query->execute([
-                ':id' =>  $id ,
-                ':codigo' =>  $codigo ,
-                ':title' => $title,
-                ':descripcion' => $descripcion ,
-                ':color' => $color ,
-                ':textColor' => $text,
-                ':start' => $start,
-                ':end' => $end,
-                ':servicio' => $servicio
+                ':id' =>  $cita->getId() ,
+                ':codigo' =>  $cita->getCodigo() ,
+                ':title' => $cita->getTitle(),
+                ':descripcion' => $cita->getDescripcion() ,
+                ':color' => $cita->getColor() ,
+                ':textColor' => $cita->getTextColor(),
+                ':start' => $cita->getStart(),
+                ':end' => $cita->getEnd(),
+                ':servicio' => $cita->getIdServicio()
             ]);
             return true;
         }catch(PDOException $e){
