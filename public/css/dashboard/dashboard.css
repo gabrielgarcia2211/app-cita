@@ -145,3 +145,35 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+
+
+.slider-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.single-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+
+#slide-1 {background-image: url(../../img/WALLPAPER_PANTALLA_UFPS.png);}
+
+
+
+.table {
+    text-align: center;
+}
+
+.th {
+    background-color: #dd4b39;
+}
+
+@media (max-width: 900px){
+    #usuario{
+        display: none;
+    }
+}

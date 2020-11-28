@@ -28,7 +28,14 @@
             echo $resp;
         }
 
-
-
+      function cerrarSesionEstudiante(){
+          unset($_SESSION['codigo']);
+          session_destroy();
+          header('Location: ' . constant('URL'). 'loginControl');
       }
+
+
+
+
+  }
 ?>

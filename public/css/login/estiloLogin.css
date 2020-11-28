@@ -71,7 +71,7 @@ body {
 
 .slider-wrap {
   width: 100%;
-  height:100%;
+  height: 100%;
   position: absolute;
 }
 .single-slide {
@@ -80,35 +80,35 @@ body {
   position: absolute;
   opacity: 0;
   animation: slider-animation;
-  animation-duration: 9s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
   background-size: cover;
 }
 
 #slide-1 {background-image: url(../../img/19.jpg);}
-#slide-2 {animation-delay: 5s; background-image: url(../../img/bg2.jpg);}
-#slide-3 {animation-delay: 10s; background-image: url(../../img/bg1.jpg);}
+#slide-2 {animation-delay: 10s; background-image: url(../../img/bg2.jpg);}
+#slide-3 {animation-delay: 20s; background-image: url(../../img/bg1.jpg);}
 /*#slide-4 {animation-delay: 15s; background-image: url(https://img.interempresas.net/fotos/2000369.jpeg);}
 #slide-5 {animation-delay: 20s; background-image: url(https://unisalia.com/storage/2018/11/ingieneria-agroindustrial_opt.jpg);}
 */
 @keyframes slider-animation {
-    
-0% {
+
+  0% {
     opacity: 0;
-}
-6% {
+  }
+  6% {
     opacity: 1;
-}
-24% {
+  }
+  24% {
     opacity: 1;
-}
-30% {
+  }
+  30% {
     opacity: 0;
-}
-100% {
+  }
+  100% {
     opacity: 0;
-}
+  }
 }
 
 #logo {
@@ -121,4 +121,11 @@ body {
   position: fixed;
   border-top: 5px solid #dd4b39;
   border-radius: 10px;
+}
+
+input, textarea {
+  font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
 }

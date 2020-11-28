@@ -19,6 +19,19 @@ class estudianteDao extends Model{
             }
     }
 
+    public function getCitaEstudiante($codigo){
+        try{
+            $query = $this->db->connect()->prepare("SELECT cita.title, cita.descripcion , cita.start, cita.end , servicio.descripcion as servicio FROM cita INNER JOIN servicio ON servicio.id=cita.id_servicio WHERE codigo=$codigo   ORDER BY start  ASC");
+            $query->execute();
+            $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
+    }
+
+
+
     public function addCita($codigo, $title, $descripcion, $color, $text, $start, $end, $servicio){
         $cita = new citaDto(0,$codigo, $title, $descripcion, $color, $text, $start, $end, $servicio);
         $query = $this->db->connect()->prepare("INSERT INTO cita(codigo, title, descripcion, color, textColor, start, end , id_servicio) VALUES (:codigo,:title,:descripcion,:color,:textColor, :start, :end ,:servicio)");
@@ -93,6 +106,17 @@ class estudianteDao extends Model{
     public function getHorario($horario){
         try{
             $query = $this->db->connect()->prepare("SELECT start FROM cita where start LIKE '$horario%'");
+            $query->execute();
+            $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
+    }
+
+    function getData($codigo){
+        try{
+            $query = $this->db->connect()->prepare("SELECT * FROM users INNER JOIN personas ON users.documento = personas.documento where users.codigo=$codigo");
             $query->execute();
             $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;

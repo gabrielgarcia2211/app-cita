@@ -1,5 +1,6 @@
 
-const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
+//const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
+const URLD = "http://localhost/cita/";
 
 
   //METODO PARA LA VERIFICACION DE DATOS 

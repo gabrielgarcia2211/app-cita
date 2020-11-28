@@ -7,14 +7,22 @@
 
       function __construct(){
          parent::__construct();
+          if (!isset($_SESSION['codigo'])) {
+              header('Location: ' . constant('URL') . 'loginControl');
+              return;
+          }
          $this->view->servicio = [];
          $this->view->horario = [];
+         $this->view->cita = [];
+         $this->view->data = [];
         
       }
 
       function render($ubicacion = null){
          $constr = "dashboard";
+         $this->view->cita = $this->model->getCitaEstudiante($_SESSION['codigo']);
          $this->view->servicio = $this->model->getServicio();
+         $this->view->data = $this->model->getData($_SESSION['codigo']);
 
 
          if(isset($ubicacion[0])){

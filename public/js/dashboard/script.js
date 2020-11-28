@@ -1,4 +1,5 @@
-const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
+//const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
+const URLD = "http://localhost/cita/";
 var ID;
 var FechaDisponible;
 var tomarHora = "";
@@ -204,6 +205,16 @@ function llenarHora(id){
    $("#" + id).hide();
    tomarHora = id + ":00" + ":00";
 }
+
+function viewAgenda(){
+   window.location.href = URLD + "estudianteControl/render/agenda";
+}
+
+function viewTabla(){
+   window.location.href = URLD + "estudianteControl/render/index";
+}
+
+
 
 function httpRequest(url, callback){
    const http = new XMLHttpRequest();
