@@ -49,6 +49,50 @@ class Correo {
         }
 
 
+    function cargaCorreoCita($message,$correo)
+    {
+
+        require 'PHPMailer/Exception.php';
+        require 'PHPMailer/PHPMailer.php';
+        require 'PHPMailer/SMTP.php';
+
+
+        // Instantiation and passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+
+
+
+
+        try {
+            $mail->IsSMTP();
+            $mail->isHTML(true);
+            $mail->SMTPDebug  = 0;
+            $mail->SMTPAuth   = true;
+            $mail->SMTPSecure = "tls";
+            $mail->Host       = "smtp.gmail.com";
+            $mail->Port       = '587';
+            $mail->Username   = 'garciaquinteroga@gmail.com';
+            $mail->Password   = 'cvueigooddvmxcio';
+            $mail->setFrom('garciaquinteroga@gmail.com', 'Cambio de agenda');
+            $mail->addAddress($correo, '');
+            $mail->Subject = 'Customer Details';            //Asunto del mensaje
+            $mail->Body    = $message;//esto es el html del metodo mensaje
+            $mail->AltBody    = $message;//esto es el html del metodo mensaje
+
+            if($mail->Send())
+            {
+                $msg = "<div class='alert alert-success'> Hola,<br /> 'el nombrexxxx' correo enviado a 'Enviando a tal correo:xxxxx' sin problemas</div>";
+            }
+        }
+        catch(phpmailerException $ex)
+        {
+            $msg = "<div class='alert alert-warning'>".$ex->errorMessage()."</div>";
+        }
+
+        echo $msg;//mostramos el mensaje
+    }
+
+
 
 }
 

@@ -51,9 +51,9 @@ function calender(){
 
       },
       navLinks: true,
-      editable: true,
+      editable: false,
       eventLimit: true,
-      eventDrop:function (calEvent){
+      /*eventDrop:function (calEvent){
          ID = calEvent.id;
          FechaHora = calEvent.start.format().split("T");
          var servicio = $("#exampleFormControlSelect1").val();
@@ -69,7 +69,7 @@ function calender(){
             })
             location.reload();
          });
-      }
+      }*/
    });
 }
 

@@ -13,7 +13,7 @@ class adminControl extends Controller{
         if(isset($ubicacion[0])){
             $this->view->render($constr , $ubicacion[0]);
         }else{
-            $this->view->render($constr, '');}
+            $this->view->render($constr, 'admin');}
     }
 
     function enviarPdf($param = null){

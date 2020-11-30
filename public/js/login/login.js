@@ -17,13 +17,31 @@ const URLD = "http://localhost/cita/";
     }
     $('.alert').hide();
     httpRequest(URLD + "loginControl/validarDatos/" + codigo + "/" + documento + "/" + contraseña, function () {
-      var resp = this.responseText;
-      if(resp==1){
+      var tasks = JSON.parse(this.responseText);
+
+        console.log(tasks[0].rol);
+        console.log(tasks[1]);
+
+        if(!tasks[1]){
+          $('.respuesta').text("Datos incorrectos!");
+          $('.alert').show();
+        }else{
+          if(tasks[0].rol==1){
+            window.location.href = URLD + "adminControl/render/";
+          }else if(tasks[0].rol==2){
+            window.location.href = URLD + "ingenieroControl/render/";
+          } else if(tasks[0].rol==3){
+            window.location.href = URLD + "estudianteControl/render/";
+          }
+        }
+
+
+     /* if(resp==1){
         window.location.href = URLD + "estudianteControl/render/";
       }else{
         $('.respuesta').text("Datos incorrectos!");
         $('.alert').show();
-      }
+      }*/
     });
    
   

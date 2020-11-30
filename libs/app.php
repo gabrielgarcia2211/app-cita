@@ -51,6 +51,9 @@ class App{
            if($url[0]=="admi"){
                $url[0]="admin";
            }
+           if($url[0]=="ingenie"){
+               $url[0]="ingeniero";
+           }
 
 
            $controller->loadModel($url[0]);

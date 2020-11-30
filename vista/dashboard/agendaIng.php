@@ -121,17 +121,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="titulo">Titulo</label>
-                                        <input class="form-control" type="text" name="titulo" id="titulo">
+                                        <input class="form-control" type="text" name="titulo" id="titulo" disabled>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Servicio</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <?php for ($m = 0; $m < count($this->servicio); $m++) : ?>
-                                            <option class="dropdown-item" href="#" value="<?php echo $this->servicio[$m]['id'];?>"><?php echo $this->servicio[$m]['descripcion'];?></option>
-                                            <?php endfor; ?></a>
-                                        </select>
-                                    </div>
-
                                     <div class="input-group clockpicker contenedor" data-autoclose="true"  style="margin-top: 2%">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-clock"></i></span>
@@ -140,9 +131,9 @@
                                     </div>
                                     <div class="form-group" style="margin-top: 2%">
                                         <label for="descripcion">Descripcion</label>
-                                        <textarea class="form-control" id="descripcion" rows="2"></textarea>
+                                        <textarea class="form-control" id="descripcion" rows="2 disabled"></textarea>
                                     </div>
-                                    <div class="form-group" style="width: 30%;display: ">
+                                    <div class="form-group" style="width: 30%;display: none ">
                                         <label for="color">Color</label>
                                         <input class="form-control" type="text"  name="color" id="color"  value="#8080ff" disabled>
                                     </div>
@@ -159,9 +150,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button onclick="guardarCita()" type="button" class="btn btn-primary" id="agregar">Agregar</button>
-                <button onclick="editarCita()" type="button" class="btn btn-success" data-dismiss="modal" id="editar">Editar</button>
-                <button onclick="deleteCita()" type="button" class="btn btn-danger" id="eliminar">Eliminar</button>
+                <button onclick="editarCita()" type="button" class="btn btn-success" data-dismiss="modal" id="editar">Editar Horario</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar">Cerrar</button>
             </div>
         </div>
@@ -182,7 +171,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src='<?php echo constant('URL')?>public/js/dashboard/script.js'></script>
+<script src='<?php echo constant('URL')?>public/js/dashboard/ingeniero.js'></script>
 
 
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>

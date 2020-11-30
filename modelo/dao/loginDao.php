@@ -26,4 +26,17 @@ class loginDao extends Model{
         }
     }
 
+    public function traerRol($codigo){
+        try{
+            $statement = $this->db->connect()->prepare("SELECT rol FROM users WHERE  codigo = :codigo ");
+            $statement->execute(array(
+                ':codigo' => $codigo
+            ));
+            $resultado = $statement->fetch();
+            return $resultado;
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
+    }
+
 }
