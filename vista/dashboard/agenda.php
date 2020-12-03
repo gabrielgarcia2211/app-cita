@@ -125,7 +125,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Servicio</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <select  onclick="return capturaServicio()" class="form-control" id="exampleFormControlSelect1">
                                             <?php for ($m = 0; $m < count($this->servicio); $m++) : ?>
                                             <option class="dropdown-item" href="#" value="<?php echo $this->servicio[$m]['id'];?>"><?php echo $this->servicio[$m]['descripcion'];?></option>
                                             <?php endfor; ?></a>

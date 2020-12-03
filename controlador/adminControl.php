@@ -6,10 +6,16 @@ class adminControl extends Controller{
 
     function __construct(){
         parent::__construct();
+        if (!isset($_SESSION['codigo'])) {
+            header('Location: ' . constant('URL') . 'loginControl');
+            return;
+        }
+        $this->view->data = [];
     }
 
     function render($ubicacion = null){
         $constr = "dashboard";
+        $this->view->data = $this->model->getData($_SESSION['codigo']);
         if(isset($ubicacion[0])){
             $this->view->render($constr , $ubicacion[0]);
         }else{

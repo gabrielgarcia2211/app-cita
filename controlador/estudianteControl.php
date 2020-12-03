@@ -32,7 +32,7 @@
       }
 
       function getCita(){
-          $resp = $this->model->getCita();
+          $resp = $this->model->getCita($_SESSION['codigo']);
           echo json_encode($resp);
 
       }
@@ -82,7 +82,7 @@
 
           for ($i=0;$i<4;$i++) {
 
-              $resp = $this->model->getHorario($NuevaFecha);
+              $resp = $this->model->getHorario($NuevaFecha,$param[1]);
               $NuevaFecha = strtotime('2 hour', strtotime($NuevaFecha));
               $NuevaFecha =  date ( 'Y-m-d H:i:s' , $NuevaFecha);
               $hora = strtotime('2 hour', strtotime($hora));
@@ -95,6 +95,7 @@
 
           }
           echo json_encode($valor);
+          //echo $param[1];
       }
 
 

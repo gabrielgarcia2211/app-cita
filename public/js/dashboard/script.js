@@ -6,6 +6,10 @@ var tomarHora = "";
 
 this.calender();
 
+function capturaServicio(){
+
+  this.getHorario();
+}
 
 $('.clockpicker').clockpicker();
 
@@ -171,20 +175,20 @@ function deleteCita(){
 }
 
 function getHorario(){
-   httpRequest(URLD + "estudianteControl/getHorario/" + FechaDisponible , function () {
-      let tasks = JSON.parse(this.responseText);
-      let template = '';
+   var servicio = $("#exampleFormControlSelect1").val();
+   httpRequest(URLD + "estudianteControl/getHorario/" + FechaDisponible + "/" + servicio , function () {
+       let tasks = JSON.parse(this.responseText);
+       let template = '';
 
-      for (var i = 0;i<4 ;i++){
-         if(tasks[i]!=0){
-            par = tasks[i].substr(0,2);
-            template +=`<tr style="padding: 4px;margin-right: 10px">
-             <td id="${par}" onclick="return llenarHora(this.id)" type="button" class="btn btn-info" >${tasks[i]}</td>
-             </tr>`
-         }
-      }
-      $('.contenedor').html(template);
-
+       for (var i = 0;i<4 ;i++){
+          if(tasks[i]!=0){
+             par = tasks[i].substr(0,2);
+             template +=`<tr style="padding: 4px;margin-right: 10px">
+              <td id="${par}" onclick="return llenarHora(this.id)" type="button" class="btn btn-info" >${tasks[i]}</td>
+              </tr>`
+          }
+       }
+       $('.contenedor').html(template);
    });
 
 

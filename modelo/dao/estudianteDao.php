@@ -8,9 +8,9 @@ class estudianteDao extends Model{
       
        
     }
-    public function getCita(){
+    public function getCita($codigo){
             try{
-                $query = $this->db->connect()->prepare('SELECT * FROM cita');
+                $query = $this->db->connect()->prepare("SELECT * FROM cita INNER JOIN users ON cita.codigo=users.codigo WHERE users.codigo=$codigo");
                 $query->execute();
                 $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
                 return $resultado;
@@ -103,9 +103,10 @@ class estudianteDao extends Model{
     }
 
 
-    public function getHorario($horario){
+    public function getHorario($horario,$servicio){
         try{
-            $query = $this->db->connect()->prepare("SELECT start FROM cita where start LIKE '$horario%'");
+           //$query = $this->db->connect()->prepare("SELECT start FROM cita where start LIKE '$horario%'");
+            $query = $this->db->connect()->prepare("SELECT c.start FROM servicio  INNER JOIN cita c ON c.id_servicio = servicio.id WHERE c.start LIKE '$horario%' AND servicio.id=$servicio");
             $query->execute();
             $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;

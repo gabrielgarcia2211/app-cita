@@ -20,4 +20,16 @@ class adminDao extends Model
             return $e->getMessage();
         }
     }
+
+    function getData($codigo){
+        try{
+            $query = $this->db->connect()->prepare("SELECT * FROM users INNER JOIN personas ON users.documento = personas.documento where users.codigo=$codigo");
+            $query->execute();
+            $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
+    }
+
 }
