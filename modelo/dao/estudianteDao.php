@@ -30,8 +30,6 @@ class estudianteDao extends Model{
         }
     }
 
-
-
     public function addCita($codigo, $title, $descripcion, $color, $text, $start, $end, $servicio){
         $cita = new citaDto(0,$codigo, $title, $descripcion, $color, $text, $start, $end, $servicio);
         $query = $this->db->connect()->prepare("INSERT INTO cita(codigo, title, descripcion, color, textColor, start, end , id_servicio) VALUES (:codigo,:title,:descripcion,:color,:textColor, :start, :end ,:servicio)");
@@ -90,7 +88,6 @@ class estudianteDao extends Model{
 
     }
 
-
     public function getServicio(){
         try{
             $query = $this->db->connect()->prepare('SELECT * FROM servicio');
@@ -101,7 +98,6 @@ class estudianteDao extends Model{
             return $e->getMessage();
         }
     }
-
 
     public function getHorario($horario,$servicio){
         try{

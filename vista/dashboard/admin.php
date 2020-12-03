@@ -84,43 +84,48 @@
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre">
+                        <input onkeypress="return soloLetras(event)"  type="text" class="form-control" id="nombre" placeholder="Nombre" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Apellidos">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <input type="number" class="form-control" id="inputEmail4" placeholder="Cedula">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <input type="number" class="form-control" id="inputEmail4" placeholder="Codigo">
+                        <input onkeypress="return soloLetras(event)"  type="text" class="form-control" id="apellido" placeholder="Apellidos">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Correo Institucional">
+                        <input type="number" class="form-control" id="cedula" placeholder="Cedula">
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Correo Personal">
+                        <input type="number" class="form-control" id="codigo" placeholder="Codigo">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Telefono">
+                        <input type="email" class="form-control" id="correo_institucional" placeholder="Correo Institucional">
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+                        <input type="email" class="form-control" id="correo_personal" placeholder="Correo Personal">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input onkeypress="return soloLetras(event)"  type="text" class="form-control" id="telefono" placeholder="Telefono">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <button type="submit" class="btn btn-danger btn-block btn-flat" style="width: 50%; margin-left: 25%;">Registrar</button>
+                    <button onclick="return guardarIngeniero()"  type="submit"  class="btn btn-danger btn-block btn-flat" style="width: 50%; margin-left: 25%;">Registrar</button>
                 </div>
             </form>
+
+                <div class="alert alert-primary" role="alert" style="margin-top: 2%;width: 80%;position: relative; left: 10%;display: none" >
+                    <strong id="contError"></strong>
+                </div>
+
         </div>
         <br>
         <div>
@@ -131,42 +136,27 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col" style="background-color: #dd4b39;">#</th>
-                        <th scope="col" style="background-color: #dd4b39;">First</th>
-                        <th scope="col" style="background-color: #dd4b39;">Last</th>
-                        <th scope="col" style="background-color: #dd4b39;">Handle</th>
+                        <th scope="col" style="background-color: #dd4b39;">Codigo</th>
+                        <th scope="col" style="background-color: #dd4b39;">Nombre</th>
+                        <th scope="col" style="background-color: #dd4b39;">Apellido</th>
+                        <th scope="col" style="background-color: #dd4b39;">Documento</th>
+                        <th scope="col" style="background-color: #dd4b39;">Correo Institucional</th>
+                        <th scope="col" style="background-color: #dd4b39;">Telefono</th>
                         <th scope="col" style="background-color: #dd4b39;"></th>
                     </tr>
                 </thead>
                 <tbody>
+                <?php for ($m = 0; $m < count($this->ing); $m++) : ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
+                        <th scope="row"><?php echo $this->ing[$m]['codigo'];?></th>
+                        <td><?php echo $this->ing[$m]['nombre'];?></td>
+                        <td><?php echo $this->ing[$m]['apellido'];?></td>
+                        <td><?php echo $this->ing[$m]['documento'];?></td>
+                        <td><?php echo $this->ing[$m]['correo_institucional'];?></td>
+                        <td><?php echo $this->ing[$m]['telefono'];?></td>
+                        <td><button onclick="return eliminarIngeniero('<?php echo $this->ing[$m]['codigo'];?>')" class="btn btn-danger">Eliminar</button></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
+                <?php endfor; ?>
                 </tbody>
             </table>
         </div>
@@ -185,6 +175,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src='<?php echo constant('URL')?>public/js/dashboard/admin.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

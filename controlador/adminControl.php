@@ -11,15 +11,39 @@ class adminControl extends Controller{
             return;
         }
         $this->view->data = [];
+        $this->view->ing = [];
     }
 
     function render($ubicacion = null){
         $constr = "dashboard";
         $this->view->data = $this->model->getData($_SESSION['codigo']);
+        $this->view->ing = $this->model->getIngeniero();
         if(isset($ubicacion[0])){
             $this->view->render($constr , $ubicacion[0]);
         }else{
             $this->view->render($constr, 'admin');}
+    }
+
+    function addIngeniero($param = null){
+        if($param==null)return;
+        $nombre = $param[0];
+        $apellido  = $param[1];
+        $cedula = $param[2];
+        $codigo= $param[3];
+        $correo_institucional = $param[4];
+        $correo_personal  = $param[5];
+        $telefono  = $param[6];
+        $contraseña = $param[7];
+
+        $resp = $this->model->addIngeniero($nombre,$apellido,$cedula,$codigo,$correo_institucional,$correo_personal, $telefono,$contraseña);
+        echo $resp;
+    }
+
+    function deleteIngeniero($param = null){
+        if($param==null)return;
+        $id = $param[0];
+        $resp = $this->model->deleteIngeniero($id);
+        echo $resp;
     }
 
     function enviarPdf($param = null){

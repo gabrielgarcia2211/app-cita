@@ -117,7 +117,6 @@ function guardarCita(){
                icon: 'success',
                confirmButtonText: 'OK'
             })
-            alert(resp);
 
 
          });
@@ -217,8 +216,6 @@ function viewAgenda(){
 function viewTabla(){
    window.location.href = URLD + "estudianteControl/render/index";
 }
-
-
 
 function httpRequest(url, callback){
    const http = new XMLHttpRequest();
