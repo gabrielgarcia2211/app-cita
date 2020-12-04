@@ -84,11 +84,14 @@
             <form>
                 <div class="form-group">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre">
+                        <input type="text" class="form-control"  id="nombreS" placeholder="Nombre">
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <button type="submit" class="btn btn-danger btn-block btn-flat" style="width: 50%; margin-left: 25%;">Agregar</button>
+                    <button onclick="return guardarServicio()" class="btn btn-danger btn-block btn-flat" style="width: 50%; margin-left: 25%;">Agregar</button>
+                </div>
+                <div class="alert alert-primary" role="alert" style="margin-top: 2%;width: 80%;position: relative; left: 10%;display: none" >
+                    <strong id="contError"></strong>
                 </div>
             </form>
         </div>
@@ -107,51 +110,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php for ($m = 0; $m < count($this->ser); $m++) : ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
+                        <th scope="row"><?php echo $this->ser[$m]['id'];?></th>
+                        <td><?php echo $this->ser[$m]['descripcion'];?></td>
+                        <td>
+                            <button onclick="return eliminarServicio('<?php echo $this->ser[$m]['id'];?>')" class="btn btn-danger">Eliminar</button>
+                        </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
+                <?php endfor; ?>
                 </tbody>
             </table>
         </div>
@@ -170,6 +137,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src='<?php echo constant('URL')?>public/js/dashboard/admin.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

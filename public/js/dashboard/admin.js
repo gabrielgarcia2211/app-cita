@@ -65,7 +65,6 @@ function guardarIngeniero(){
     });
 }
 
-
 function eliminarIngeniero(id){
     event.preventDefault();
     Swal.fire({
@@ -88,7 +87,106 @@ function eliminarIngeniero(id){
 
 }
 
+function guardarServicio(){
+    event.preventDefault();
 
+    var nombre = $("#nombreS").val();
+
+    if(nombre==""){
+        $('#contError').text("Por favor, Introduce todos los valores");
+        $('.alert').show();
+        return;
+    }
+    $('#alert').hide();
+
+
+    httpRequest(URLD + "adminControl/addServicio/" + nombre , function () {
+        var resp = this.responseText;
+        if(resp==1){
+            Swal.fire({
+                title: 'Exito!',
+                text: 'Servicio Agregado!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            })
+        }else{
+            $('#contError').text("Codigo ya registrado!");
+            $('.alert').show();
+        }
+        $('#alert').hide();
+       location.reload();
+
+
+
+    });
+}
+
+function eliminarServicio(id){
+    event.preventDefault();
+    Swal.fire({
+        title: 'Desea eliminar el servicio?',
+        text: "Esta operacion es irreversible",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            httpRequest(URLD + "adminControl/deleteServicio/" + id , function () {
+                location.reload();
+            });
+            return true;
+        }
+    })
+
+}
+
+function vincular(){
+    event.preventDefault();
+    var servicio = $("#idServicio").val();
+    var ing = $("#codigoIng").val();
+
+    Swal.fire({
+        title: 'Desea relacionar el ingeniero con el servicio?',
+        text: "Se añadira un nuevo vinculo",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#71C090',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Vincular!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            httpRequest(URLD + "adminControl/addVinculo/" + servicio  + "/"  + ing, function () {
+               location.reload();
+                //alert(this.responseText)
+            });
+            return true;
+        }
+    })
+
+
+}
+
+function eliminarVinculo(id){
+    event.preventDefault();
+    Swal.fire({
+        title: 'Desea eliminar la relacion?',
+        text: "Esta operacion es irreversible",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            httpRequest(URLD + "adminControl/deleteVinculo/" + id , function () {
+                location.reload();
+            });
+            return true;
+        }
+    })
+}
 
 function httpRequest(url, callback){
     const http = new XMLHttpRequest();

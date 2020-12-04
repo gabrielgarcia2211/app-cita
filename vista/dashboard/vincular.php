@@ -83,20 +83,20 @@
         <div>
             <form>
                 <div class="form-group">
-                    <select class="form-control">
-                        <option>Ingeniero</option>
-                        <option>.......</option>
-                        <option>.......</option>
+                    <select class="form-control" id="codigoIng">
+                        <?php for ($m = 0; $m < count($this->ing); $m++) : ?>
+                            <option value="<?php echo $this->ing[$m]['codigo'];?>"><?php echo $this->ing[$m]['nombre'] . " " . $this->ing[$m]['apellido'];?></option>
+                        <?php endfor; ?>
                     </select>
                     <br>
-                    <select class="form-control">
-                        <option>Servicio</option>
-                        <option>.......</option>
-                        <option>.......</option>
+                    <select  class="form-control" id="idServicio">
+                        <?php for ($m = 0; $m < count($this->ser); $m++) : ?>
+                            <option value="<?php echo $this->ser[$m]['id'];?>"><?php echo $this->ser[$m]['descripcion'];?></option>
+                        <?php endfor; ?>
                     </select>
                 </div>
                 <div style="text-align: center;">
-                    <button type="submit" class="btn btn-danger btn-block btn-flat" style="width: 50%; margin-left: 25%;">Vincular</button>
+                    <button  onclick="return vincular()" class="btn btn-danger btn-block btn-flat" style="width: 50%; margin-left: 25%;">Vincular</button>
                 </div>
             </form>
         </div>
@@ -116,60 +116,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php for ($m = 0; $m < count($this->vinculo); $m++) : ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
+                        <th scope="row"><?php echo $this->vinculo[$m]['id'];?></th>
+                        <td><?php echo $this->vinculo[$m]['nombre'] . " " . $this->vinculo[$m]['apellido'];?></td>
+                        <td><?php echo $this->vinculo[$m]['descripcion'];?></td>
+                        <td>
+                            <button onclick="return eliminarVinculo('<?php echo $this->vinculo[$m]['id'];?>')" class="btn btn-danger">Eliminar</button>
+                        </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td>Mark</td>
-                        <td><button type="button" class="btn btn-danger">Remover</button></td>
-                    </tr>
+                <?php endfor; ?>
                 </tbody>
             </table>
         </div>
@@ -188,6 +144,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src='<?php echo constant('URL')?>public/js/dashboard/admin.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

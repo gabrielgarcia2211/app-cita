@@ -28,8 +28,8 @@ class Correo {
                 $mail->Port       = '587';
                 //Recipients
 
-                $mail->setFrom('garciaquinteroga@gmail.com', 'Recuperacion de Cuenta');
-                $mail->addAddress('garciaquinteroga@gmail.com', '');
+                $mail->setFrom('garciaquinteroga@gmail.com', 'Reporte de Citas');
+                $mail->addAddress('gabrielarturogq@ufps.edu.co', '');
 
             
                 // Content
@@ -40,8 +40,8 @@ class Correo {
                // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();
-                $mail->ClearAddresses(); 
-                echo 'Message has been sent';
+                $mail->ClearAddresses();
+                header('Location: ' . constant('URL') . 'adminControl');
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }

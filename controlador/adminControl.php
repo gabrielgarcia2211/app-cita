@@ -12,12 +12,17 @@ class adminControl extends Controller{
         }
         $this->view->data = [];
         $this->view->ing = [];
+        $this->view->ser = [];
+        $this->view->vinculo = [];
     }
 
     function render($ubicacion = null){
         $constr = "dashboard";
         $this->view->data = $this->model->getData($_SESSION['codigo']);
         $this->view->ing = $this->model->getIngeniero();
+        $this->view->ser =$this->model->getServicio();
+        $this->view->vinculo = $this->model->getVinculo();
+
         if(isset($ubicacion[0])){
             $this->view->render($constr , $ubicacion[0]);
         }else{
@@ -33,7 +38,7 @@ class adminControl extends Controller{
         $correo_institucional = $param[4];
         $correo_personal  = $param[5];
         $telefono  = $param[6];
-        $contraseña = $param[7];
+        $contraseña = md5($param[7]);
 
         $resp = $this->model->addIngeniero($nombre,$apellido,$cedula,$codigo,$correo_institucional,$correo_personal, $telefono,$contraseña);
         echo $resp;
@@ -43,6 +48,35 @@ class adminControl extends Controller{
         if($param==null)return;
         $id = $param[0];
         $resp = $this->model->deleteIngeniero($id);
+        echo $resp;
+    }
+
+    function addServicio($param = null){
+        if($param==null)return;
+        $nombre = strtoupper ( $param[0]);
+        $resp = $this->model->addServicio($nombre);
+        echo $resp;
+    }
+
+    function deleteServicio($param = null){
+        if($param==null)return;
+        $id = $param[0];
+        $resp = $this->model->deleteServicio($id);
+        echo $resp;
+    }
+
+    function addVinculo($param = null){
+        if($param==null)return;
+        $servicio = $param[0];
+        $ing = $param[1];
+        $resp = $this->model->addVinculo($servicio,$ing);
+        echo $resp;
+    }
+
+    function deleteVinculo($param = null){
+        if($param==null)return;
+        $id = $param[0];
+        $resp = $this->model->deleteVinculo($id);
         echo $resp;
     }
 

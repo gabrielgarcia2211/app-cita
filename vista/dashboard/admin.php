@@ -46,7 +46,9 @@
             <img src="<?php echo constant('URL')?>public/img/logo.png" alt="Responsive image" style="padding: 5px">
             <span><i class="fas fa-bars fa-lg" style="color: white; padding-left: 20px; cursor: pointer"
                     onclick="openNav()"></i></span>
+            <a class="btn btn-info" href="../../adminControl/enviarPdf" style="margin-left: 20px">Generar Reporte</a>
         </div>
+
         <div>
             <h4 style="color: white;position: relative;left: -80%" id="usuario">Benvenido, <?php echo $this->data[0]['nombre'] . ' ' . $this->data[0]['apellido'] ;  ?></h4>
         </div>
@@ -111,7 +113,7 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input onkeypress="return soloLetras(event)"  type="text" class="form-control" id="telefono" placeholder="Telefono">
+                        <input  type="number" class="form-control" id="telefono" placeholder="Telefono">
                     </div>
                     <div class="form-group col-md-6">
                         <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
