@@ -70,8 +70,8 @@
 
       function deleteCita($param = null){
           if($param==null)return;
-          //$id = $param[0];
-          //$resp = $this->model->deleteCita($id);
+          $id = $param[0];
+          $resp = $this->model->deleteCita($id);
           echo $param[0];
       }
 

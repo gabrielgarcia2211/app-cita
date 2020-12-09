@@ -44,6 +44,9 @@
 </head>
 
 <body>
+<div class="slider-wrap">
+    <div class="single-slide" id="slide-1"></div>
+</div>
 <nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0" style="background-color: #dd4b39;padding: 5px">
     <div>
         <img src="<?php echo constant('URL')?>public/img/logo.png" alt="Responsive image" style="padding: 5px">
@@ -62,8 +65,8 @@
 <div id="mySidenav" class="sidenav" style="padding-top: 100px; z-index: 10000;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul class="list-group">
-        <li class="list-group-item"><a href="../render/index"><i class="fas fa-home"></i> Inicio</a></li>
-        <li class="list-group-item"><a href="../render/agenda"><i class="fas fa-user-tie"></i> Cita</a></li>
+        <li class="list-group-item"><a href="<?php echo constant('URL') ?>estudianteControl/render/index"><i class="fas fa-home"></i> Inicio</a></li>
+        <li class="list-group-item"><a href="<?php echo constant('URL') ?>estudianteControl/render/agenda"><i class="fas fa-user-tie"></i> Cita</a></li>
         <li style="padding-top: 250px; text-align: center;"><h6>Paginas Institucionales</h6></li>
         <li class="list-group-item"><a href="https://ww2.ufps.edu.co/" target="_blank"> <i class="fas fa-archway"></i> UFPS</a></li>
         <li class="list-group-item"><a href="https://divisist2.ufps.edu.co/" target="_blank"> <i class="fas fa-palette"></i> Divisist</a></li>
@@ -78,13 +81,13 @@
 
 <div class="container" id="contenedor" style="margin-top: 2%;margin-bottom: 6%">
 
-    <h2>Control de Citas</h2> <button onclick="viewTabla()" type="button" class="btn btn-info" style="margin-top: 2%;margin-bottom: 2%">Volver</button>
+    <h2>Control de Citas</h2>
     <div class="card">
         <div class="card-header bg-transparent">
             <div class="row align-items-center">
                 <div class="col">
                     <h6 class="text-uppercase text-muted ls-1 mb-1">Cita</h6>
-                    <h5 class="h3 mb-0">Agendar Cita</h5>
+                    <h5 class="h3 mb-0">Agendar Cita</h5><button onclick="viewTabla()" type="button" class="btn btn-info" style="margin-top: 2%;margin-bottom: 2%">Volver</button>
                 </div>
             </div>
         </div>

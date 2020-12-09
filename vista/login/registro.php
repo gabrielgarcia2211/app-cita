@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
 
-  <title>Login</title>
-  <link rel="shortcut icon" href="<?php echo constant('URL')?>public/img/logoufps.png" />
+  <title>Registro</title>
+    <link rel="shortcut icon" href="<?php echo constant('URL')?>public/img/logoufps.png" />
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -42,53 +43,55 @@
   </div>
 
   <div class="login-box-body" id="login">
-    <h4>BIENVENIDO</h4>
-    <form class="form-signin">
+    <h4>REGISTRO</h4>
       <img src="<?php echo constant('URL')?>public/img/logoufps.png" alt="..." class="rounded" id="logo">
-
-      <p class="login-box-msg" style="padding-top: 6px;">Ingresa tus datos para iniciar sesión</p>
-
-      <div class="col-auto">
-        <label class="sr-only" for="inlineFormInputGroup">Codigo</label>
-        <div class="input-group mb-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><i class="fas fa-user"></i></div>
-          </div>
-          <input type="text" class="form-control" id="inpCodigo" placeholder="Codigo" required autofocus>
+    <p class="login-box-msg" style="padding-top: 6px;">Ingresa Tus Datos</p>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input onkeypress="return soloLetras(event)"  type="text" class="form-control" id="nombre" placeholder="Nombre">
+        </div>
+        <div class="form-group col-md-6">
+          <input onkeypress="return soloLetras(event)"  type="text" class="form-control" id="apellido" placeholder="Apellidos">
         </div>
       </div>
 
-      <div class="col-auto" id="">
-        <label class="sr-only" for="inlineFormInputGroup">Documento</label>
-        <div class="input-group mb-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><i class="fas fa-user"></i></div>
-          </div>
-          <input type="password" class="form-control" id="inputDocumento" placeholder="Documento" required>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="number" class="form-control" id="cedula" placeholder="Cedula">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="number" class="form-control" id="codigo" placeholder="Codigo">
         </div>
       </div>
 
-      <div class="col-auto">
-        <label class="sr-only" for="inlineFormInputGroup">Contraseña</label>
-        <div class="input-group mb-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><i class="fas fa-lock"></i></div>
-          </div>
-          <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" required>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="email" class="form-control" id="email" placeholder="Correo Institucional">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="email" class="form-control" id="correo" placeholder="Correo Personal">
         </div>
       </div>
 
-      <button onclick="verificarDatos(event)"  class="btn btn-danger btn-block btn-flat">Iniciar Sesión</button>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input  type="text" class="form-control" id="telefono" placeholder="Telefono">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="password" class="form-control" id="password" placeholder="Contraseña">
+        </div>
+      </div>
+
         <div class="alert alert-danger" role="alert" style="display:none;margin-top:5%">
             <p class="respuesta" ></p>
         </div>
 
-        <a href="<?php echo constant('URL')?>loginControl/render/registro" style="margin-top: 3%;padding: 5px;display: block">¿Registrar?</a>
+      <button onclick="return registrarEstudiante()" class="btn btn-danger btn-block btn-flat">Registrarse</button>
 
     </form>
 
   </div>
-
   <script src="<?php echo constant('URL')?>public/js/login/login.js"></script>
 </body>
 

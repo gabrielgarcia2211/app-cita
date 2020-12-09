@@ -38,6 +38,23 @@
       }
 
 
+      function registroData($param){
+          if($param==null)return;
+          $nombre = $param[0];
+          $apellido = $param[1];
+          $cedula = $param[2];
+          $codigo = $param[3];
+          $email = $param[4];
+          $correo = $param[5];
+          $telefono = $param[6];
+          $password = $param[7];
+          $valor = $this->model->registroUser($nombre, $apellido, $cedula,$codigo, $email, $correo,$telefono, $password);
+          $_SESSION["codigo"] = $codigo;
+          echo $valor;
+
+      }
+
+
 
 
   }

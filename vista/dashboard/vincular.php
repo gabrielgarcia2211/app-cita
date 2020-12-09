@@ -53,7 +53,7 @@
         <div>
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="../../loginControl/cerrarSesionEstudiante"><i class="fas fa-sign-out-alt fa-lg" style="color: white;"></i></a>
+                    <a class="nav-link" href="<?php echo constant('URL') ?>loginControl/cerrarSesionEstudiante"><i class="fas fa-sign-out-alt fa-lg" style="color: white;"></i></a>
                 </li>
             </ul>
         </div>
@@ -62,9 +62,9 @@
     <div id="mySidenav" class="sidenav" style="padding-top: 100px; z-index: 10000;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul class="list-group">
-            <li class="list-group-item"><a href="../render/admin"><i class="fas fa-users"></i> Ingenieros</a></li>
-            <li class="list-group-item"><a href="../render/servicio"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
-            <li class="list-group-item"><a href="../render/vincular"><i class="fas fa-link"></i> Vincular</a></li>
+            <li class="list-group-item"><a href="<?php echo constant('URL') ?>adminControl/render/admin"><i class="fas fa-users"></i> Ingenieros</a></li>
+            <li class="list-group-item"><a href="<?php echo constant('URL') ?>adminControl/render/servicio"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+            <li class="list-group-item"><a href="<?php echo constant('URL') ?>adminControl/render/vincular"><i class="fas fa-link"></i> Vincular</a></li>
             <li style="padding-top: 250px; text-align: center;">
                 <h6>Paginas Institucionales</h6>
             </li>

@@ -1,5 +1,5 @@
-//const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
-const URLD = "http://localhost/cita/";
+const URLD = "http://agenciacitas.ayd.ingsistemasufps.co/";
+//const URLD = "http://localhost/cita/";
 
 
 //Para escribir solo letras

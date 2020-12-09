@@ -40,7 +40,6 @@
 
 <body>
 
-<body>
     <div class="slider-wrap">
         <div class="single-slide" id="slide-1"></div>
     </div>
@@ -64,8 +63,8 @@
     <div id="mySidenav" class="sidenav" style="padding-top: 100px; z-index: 10000;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul class="list-group">
-            <li class="list-group-item"><a href="../render/index"><i class="fas fa-home"></i> Inicio</a></li>
-            <li class="list-group-item"><a href="../render/agenda"><i class="fas fa-user-tie"></i> Cita</a></li>
+            <li class="list-group-item"><a href="<?php echo constant('URL') ?>estudinateControl/render/index"><i class="fas fa-home"></i> Inicio</a></li>
+            <li class="list-group-item"><a href="<?php echo constant('URL') ?>estudianteControl/render/agenda"><i class="fas fa-user-tie"></i> Cita</a></li>
             <li style="padding-top: 250px; text-align: center;"><h6>Paginas Institucionales</h6></li>
             <li class="list-group-item"><a href="https://ww2.ufps.edu.co/" target="_blank"> <i class="fas fa-archway"></i> UFPS</a></li>
             <li class="list-group-item"><a href="https://divisist2.ufps.edu.co/" target="_blank"> <i class="fas fa-palette"></i> Divisist</a></li>

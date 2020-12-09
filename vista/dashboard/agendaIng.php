@@ -44,6 +44,9 @@
 </head>
 
 <body>
+<div class="slider-wrap">
+    <div class="single-slide" id="slide-1"></div>
+</div>
 <nav class="navbar navbar-dark sticky-top flex-md-nowrap p-0" style="background-color: #dd4b39;padding: 5px">
     <div>
         <img src="<?php echo constant('URL')?>public/img/logo.png" alt="Responsive image" style="padding: 5px">

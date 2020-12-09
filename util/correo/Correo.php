@@ -74,7 +74,7 @@ class Correo {
             $mail->Username   = 'garciaquinteroga@gmail.com';
             $mail->Password   = 'cvueigooddvmxcio';
             $mail->setFrom('garciaquinteroga@gmail.com', 'Cambio de agenda');
-            $mail->addAddress($correo, '');
+            $mail->addAddress('gabrielarturogq@ufps.edu.co', '');
             $mail->Subject = 'Customer Details';            //Asunto del mensaje
             $mail->Body    = $message;//esto es el html del metodo mensaje
             $mail->AltBody    = $message;//esto es el html del metodo mensaje
