@@ -24,7 +24,7 @@
             $codigo = $param[0];
             $_SESSION["codigo"] = $codigo;
             $documento = $param[1];
-            $contrasena = $param[2];
+            $contrasena = md5($param[2]);
 
             $valor[0] = $this->model->traerRol($_SESSION["codigo"]);
             $valor[1] = $this->model->verificarUser($codigo, $documento, $contrasena);
