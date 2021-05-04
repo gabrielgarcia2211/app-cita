@@ -20,13 +20,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83ff7eb4-c12c-4e2b-9630-971eaa684b8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/css/pages/breadcrumb-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/pages/dashboard1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/pages/error-pages.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/pages/google-vector-map.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/pages/icon-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/pages/other-pages.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/pages/widget-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/Simple-Line-Icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/materialdesignicons-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/themify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/Logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/background/error-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/custom-select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/eliteadmin-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/eliteadmin-small-text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-light-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-light-text-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-light-text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logoufps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/dashboard1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/sidebarmenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/waves.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/colors/default-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/animation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/form-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/other-common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/perfect-scrollbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/scafholding.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/spinner.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/table-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/core/theme-settings.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/custom.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/pages/breadcrumb-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/pages/dashboard1.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/pages/error-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/pages/google-vector-map.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/pages/icon-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/pages/other-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/pages/widget-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/prepros-6.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/variable.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/widgest/common-widget.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/widgest/feed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/widgest/msg-box.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/widgest/profile.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/widgest/steamline.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/scss/widgest/widgets.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vista/dashboard/admin3.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controlador/loginControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/controlador/loginControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard/ingeniero.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/ingeniero.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dashboard/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/login/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,30 +106,34 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vista/dashboard" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\cita\vista\login" />
-      <recent name="D:\laragon\www\cita\vista\dashboard" />
-      <recent name="D:\laragon\www\cita\public\img" />
-      <recent name="D:\laragon\www\cita\util" />
-      <recent name="C:\xampp\htdocs\cita" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\laragon\www\cita\vista\dashboard" />
       <recent name="C:\xampp\htdocs\cita\public\css\calender" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\cita\public\assets\node_modules" />
+      <recent name="D:\laragon\www\cita\public\assets\images" />
+      <recent name="D:\laragon\www\cita\public\assets\images\background" />
+      <recent name="D:\laragon\www\cita\public\assets" />
+      <recent name="D:\laragon\www\cita\public\assets\scss" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.popper.min.js">
+    <configuration name="popper.min.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/public/assets/node_modules/popper/popper.min.js" working-dir="$PROJECT_DIR$/public/assets/node_modules/popper">
+      <method v="2" />
+    </configuration>
     <configuration name="dashboard" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$/vista/dashboard" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.popper.min.js" />
         <item itemvalue="PHPUnit.dashboard" />
       </list>
     </recent_temporary>
@@ -121,6 +184,10 @@
       <workItem from="1607561360769" duration="49000" />
       <workItem from="1608064065702" duration="218000" />
       <workItem from="1608064325108" duration="329000" />
+      <workItem from="1608133695674" duration="140000" />
+      <workItem from="1618542262457" duration="241000" />
+      <workItem from="1619703189861" duration="566000" />
+      <workItem from="1620087452697" duration="4089000" />
     </task>
     <servers />
   </component>
@@ -140,40 +207,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="735" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606589365604">
+    <state x="725" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1620091219213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="735" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606589365604" />
-    <state x="1233" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1607110745564">
+    <state x="725" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1620091219213" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1619703758407">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1233" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607110745564" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604957202785">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1619703758407" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1620091296588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="336" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1604440002623" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604957202785" />
-    <state x="698" y="300" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607006988054">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="698" y="300" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607006988054" />
-    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1607561408474">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604605495868" />
-    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607561408474" />
-    <state x="781" y="243" key="NewPhpClassDialog" timestamp="1605385334886">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="781" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605385334886" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1606589261757">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1606589261757" />
-    <state x="476" y="231" width="672" height="677" key="run.anything.popup" timestamp="1606593308102">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1604610110892" />
-    <state x="476" y="231" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606593308102" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620091296588" />
   </component>
 </project>
