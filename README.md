@@ -1,41 +1,46 @@
-# proyectoredSocial
+# 📱 ProyectoRedSocial
 
-Las arquitecturas implementadas fueron FRONT CONTROLLER y MVC
+## 🏗️ Arquitectura
 
-El desarrollo de este proyecto se realizo mediante los lenguajes PHP 7.0, JavaScript con su libreria -> JQUERY, HTML, CSS
-y como FRAMEWORK para dar estilos al CSS utilizamos bootstrap. Como administrador de base de datos MYSQL se utilizo PhpMyAmdin
+Este proyecto implementa las arquitecturas **Front Controller** y **MVC**.
 
-La aplicacion esta en estado beta de desarollo por lo tanto la herramienta que utilizamos para realizarla fue XAMPP en nuestro 
-ordenador, la cual trae una serie de componenetes como Apache Web Server Versión 2.4.41,   MySQL Database Versión 8.0.17, 
-phpMyAdmin Database Manager Versión 4.9.1.
+## 🌐 Tecnologías
 
-Descripcion de carpetas del aplicativo:
+- **Lenguajes y Librerías:** PHP 7.0, JavaScript (jQuery), HTML, CSS.
+- **Framework de Estilos:** Bootstrap.
+- **Base de Datos:** MySQL, gestionada con PhpMyAdmin.
 
+## 🛠️ Herramientas de Desarrollo
 
+El desarrollo se realizó en un entorno local utilizando **XAMPP**, que incluye los siguientes componentes:
+- **Apache Web Server:** Versión 2.4.41
+- **MySQL Database:** Versión 8.0.17
+- **phpMyAdmin:** Versión 4.9.1
 
-config -> se encuentra las variables estaticas globales que seran utilizadas a lo largo del aplicativo
+## 🚀 Estado del Proyecto
 
+La aplicación está en estado beta de desarrollo.
 
-controlador -> como su nombre lo indica, se encuentran los controladores del aplicativo, esta parte esta al pendiente de las peticiones realizadas por el usuario, ya sea mediante la URL o peticiones enviadas por AJAX a traves de los metodos POST O GET.
+## 📂 Estructura de Carpetas
 
+- **📁 config:** Contiene las variables estáticas globales utilizadas en la aplicación.
 
-fotos -> en esta seccion se encuentra las fotos quese guardan por cada usuario del sistema, por ejemplo "usuario1" guardo una foto cualquiera, la base de datos se encarga de guardar la URL de la direccion donde se encuentra la imagen en la aplicacion y la iamgen queda almacenada en fotos/usuario1/namexximagen.
+- **📁 controlador:** Contiene los controladores de la aplicación, manejando las peticiones realizadas por el usuario a través de la URL o mediante AJAX (métodos POST y GET).
 
+- **📁 fotos:** Almacena las fotos subidas por cada usuario del sistema. Por ejemplo, si "usuario1" sube una foto, la base de datos guarda la URL de la imagen, y la foto se almacena en `fotos/usuario1/nombreImagen`.
 
-libs -> se puede concluir que son las clases padres encargadas de los metodos principales al momento de que el usuario hace una peticion mediante URL, alli entra hacer implementado FRONT CONTROLLER, la cual distribuye los parametros ingresados por URL ya sea hacia un controlador,metodo o parametro dentro de cada clase.
+- **📁 libs:** Contiene las clases principales y métodos utilizados por el Front Controller para distribuir las peticiones URL hacia el controlador, método o parámetro correspondiente.
 
+- **📁 modelo:** Incluye los DAO (Data Access Object) y DTO (Data Transfer Object), que representan las consultas y los objetos de cada tabla de la base de datos.
 
-modelo -> se encuentran los dao (data access object) y los dto (data transfer object), son consultas y la representacion mediante objetos de cada tabla de la base de datos respectivamente.
+- **📁 public:** Contiene subcarpetas accesibles por el usuario a través del navegador:
+  - **📂 CSS:** Estilos aplicados a cada vista/html.
+  - **📂 FONT:** Iconos importados desde Font Awesome.
+  - **📂 ICON:** Iconos estáticos utilizados en la aplicación.
+  - **📂 JS:** JavaScript con la librería jQuery para implementar AJAX en consultas asíncronas con la base de datos.
 
+- **📁 vista:** Contiene las vistas llamadas por los controladores, organizadas en carpetas que corresponden a cada controlador. Por ejemplo, `vista/persona` corresponde a `controlador/personaControl`.
 
-public -> esta carpeta contiene una serie de subcarpeta que puede ser vista por el usuario atraves de su navegador. Se encuentra, CSS -- son los estilos dados a cada vista/html del aplicativo, FONT -- contiene iconos importados desde la pagina font awesome, ICON -- iconos estaticos utilizados a lo largo del aplicativo, JS -- javaScript con su libreria JQUERY que implementa AJAX para cosultas asincronas con la base de datos.
+- **📄 index.php:** Archivo principal de ejecución que inicia la aplicación, llamando a las clases principales ubicadas en "libs".
 
-
-vista -> se encuentra cada vista llamada por el controlador, distribuida mediante carpetas que hacen referencia hacia su controlador, por ejemplo, vista/persona -> controlador/personaControl.
-
-
-index-> archivo principal de ejecucion para el inicio del aplicativo, llama a las clases padres, que se encuentran en "libs".
-
-
-redsocial.sql -> backup de la base de datos.
-
+- **🗃️ redsocial.sql:** Backup de la base de datos.
