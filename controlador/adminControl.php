@@ -89,7 +89,7 @@ class adminControl extends Controller{
         require_once 'util/pdf.php';
 
 
-        $output = '<img src="http://localhost/cita/public/img/logoufps.png" width="60" height="60" alt="" style="display: inline-block"> <h3 style="display: inline-block;margin-left: 2%">Universidad Francisco de Paula Santander - Citas </h3>';
+        $output = '<img src="http://localhost:8082/cita/public/img/logoufps.png" width="60" height="60" alt="" style="display: inline-block"> <h3 style="display: inline-block;margin-left: 2%">Universidad Francisco de Paula Santander - Citas </h3>';
         $output .= '
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">

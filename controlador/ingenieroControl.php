@@ -91,7 +91,7 @@ class ingenieroControl extends Controller{
 
         $message .= "<tbody>
                          <tr align='center' height='50' style='font-family:Verdana, Geneva, sans-serif;'>
-                   <td style='background-color:#00a2d1; text-align:center;'><a href='http://localhost/cita' style='color:#fff; text-decoration:none;'>Se ha realizado un cambio de citas(click aquí)</a></td>
+                   <td style='background-color:#00a2d1; text-align:center;'><a href='http://localhost:8082' style='color:#fff; text-decoration:none;'>Se ha realizado un cambio de citas(click aquí)</a></td>
                    </tr>
                   
                    <tr>
@@ -136,7 +136,7 @@ class ingenieroControl extends Controller{
 
         $message .= "<tbody>
                          <tr align='center' height='50' style='font-family:Verdana, Geneva, sans-serif;'>
-                   <td style='background-color:#00a2d1; text-align:center;'><a href='http://localhost/cita' style='color:#fff; text-decoration:none;'>Se ha realizado un cambio de citas(click aquí)</a></td>
+                   <td style='background-color:#00a2d1; text-align:center;'><a href='http://localhost:8082' style='color:#fff; text-decoration:none;'>Se ha realizado un cambio de citas(click aquí)</a></td>
                    </tr>
                   
                    <tr>
