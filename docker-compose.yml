@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      args:
+        user: gabriel
+        uid: 1000
+      context: .
+      dockerfile: Dockerfile
+    container_name: cita
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8082:80"
+    networks:
+      - cita_network
+
+networks:
+  cita_network:
+    external: true
